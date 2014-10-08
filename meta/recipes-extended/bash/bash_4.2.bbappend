@@ -1,10 +1,11 @@
 # Update the patch level of bash 4.2
 #
 # Created: 2014-09-28 to fix 'Shellshock' vulnerabilities
+# Updated: 2014-10-08 added patches 51, 52, 53.
 
 # Make sure the PR gets 'bumped' so that use of this append after the base recipe has
 # been built will result in a rebuild.
-PRINC := "${@int(PRINC) + 1}"
+PRINC := "${@int(PRINC) + 2}"
 
 SRC_URI_append = " \
     ${GNU_MIRROR}/bash/bash-4.2-patches/bash42-011;apply=yes;striplevel=0;name=patch011 \
@@ -47,6 +48,9 @@ SRC_URI_append = " \
     ${GNU_MIRROR}/bash/bash-4.2-patches/bash42-048;apply=yes;striplevel=0;name=patch048 \
     ${GNU_MIRROR}/bash/bash-4.2-patches/bash42-049;apply=yes;striplevel=0;name=patch049 \
     ${GNU_MIRROR}/bash/bash-4.2-patches/bash42-050;apply=yes;striplevel=0;name=patch050 \
+    ${GNU_MIRROR}/bash/bash-4.2-patches/bash42-051;apply=yes;striplevel=0;name=patch051 \
+    ${GNU_MIRROR}/bash/bash-4.2-patches/bash42-052;apply=yes;striplevel=0;name=patch052 \
+    ${GNU_MIRROR}/bash/bash-4.2-patches/bash42-053;apply=yes;striplevel=0;name=patch053 \
     "
 
 SRC_URI[patch011.md5sum] = "58deacf3d57cbd75575444ff6a3b0806"
@@ -129,4 +133,10 @@ SRC_URI[patch049.md5sum] = "07083eeb372bd8215050a8146acc1efd"
 SRC_URI[patch049.sha256sum] = "901cd74cdd9f3e9bb5cc907d563e3d4dcdf9d5f6a751e85b706a958f51bc510e"
 SRC_URI[patch050.md5sum] = "d7b28ed8e839463f4554d67afb4f15e9"
 SRC_URI[patch050.sha256sum] = "1a19b84455e83b46fcaa27759a5dd643dde2e11ceacd1e84e351970ea04d8ba6"
+SRC_URI[patch051.md5sum] = "7dfd10542744c75aa1fd9be7109573bb"
+SRC_URI[patch051.sha256sum] = "3e15347bc23a116b8ee898acec9d0ac744612ce9bbc0096fff47c4cf1149051c"
+SRC_URI[patch052.md5sum] = "9136b4c94fe3d3eddbdbb512cad6d306"
+SRC_URI[patch052.sha256sum] = "f098fa7148f76c80ec82c704a1aab6ae246960a7ce05624ecc8844fa1561dc0c"
+SRC_URI[patch053.md5sum] = "ca14c1a40098ff586619cabb6ee560ce"
+SRC_URI[patch053.sha256sum] = "20e693d7543885c8da78db873782e56206f522d27da2c953103f23b950ffd3de"
 
